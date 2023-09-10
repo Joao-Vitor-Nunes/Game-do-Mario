@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 80%;
+    height: 500px;
+    border: 1px solid #000000;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /*o que passar do game board irá sumir, ex: cano ir a esquerda*/
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 3s infinite linear; /*como chamar a key frame(animacao), tempo determinado*/
+}                                          /*infinite(cria um loop), linear(movimento constante)*/
+
+@keyframes pipe-animation {
+    from { /*onde comeca o frame*/
+        right: -80px;/*-80 para o pipe vim de fora da tela , e não teletransportar para o início*/ 
+    }
+
+    to { /*onde termina o frame*/
+        right: 100%;
+
+    }
+}
