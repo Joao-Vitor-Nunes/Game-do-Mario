@@ -5,11 +5,12 @@
 }
 
 .game-board {
-    width: 80%;
-    height: 500px;
-    border: 1px solid #000000;
+    width: 100%;
+    height: 700px;
+    border: 0.6em solid #0fc324;
     margin: 0 auto;
     position: relative;
+    background: linear-gradient(rgb(92, 192, 235), rgb(203, 255, 198));
     overflow: hidden; /*o que passar do game board irá sumir, ex: cano ir a esquerda*/
 }
 
@@ -17,7 +18,7 @@
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: pipe-animation 3s infinite linear; /*como chamar a key frame(animacao), tempo determinado*/
+    animation: pipe-animation 1.5s infinite linear; /*como chamar a key frame(animacao), tempo determinado*/
 }                                          /*infinite(cria um loop), linear(movimento constante)*/
 
 @keyframes pipe-animation {
@@ -35,10 +36,12 @@
     width: 180px;
     position: absolute;
     bottom: 0;
-    animation: jump 2s infinite ease-out;
+
 }
 
-
+.jump {
+    animation: jump 500ms ease-out;
+}
 
 @keyframes jump {
     0% {
@@ -56,8 +59,26 @@
     60% {
         bottom: 180px;
     }
+    
 
     100% {
         bottom: 0;/*fim do pulo*/
+    }
+}
+
+.clouds {
+    position: absolute;
+    width: 250px;
+    margin-top: 50px;
+    animation: clouds_animation 12s infinite linear;
+}
+
+@keyframes clouds_animation {
+    from {
+        right: -230px;
+    }
+
+    to {
+        right: 100%;
     }
 }
