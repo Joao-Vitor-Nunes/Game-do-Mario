@@ -35,4 +35,26 @@ const loop = setInterval(() => {
 
 }, 10)
 
+
+        // Inicialize a pontuação do jogador
+        let pontuacao = 0;
+
+        // Referência ao elemento de exibição da pontuação
+        const pontuacaoElemento = document.getElementById("placar");
+
+        // Função para atualizar a pontuação
+        function atualizarPontuacao() {
+            // Aumentar a pontuação por 1 ponto a cada segundo
+            pontuacao += 1;
+
+            // Atualizar o texto do elemento de exibição da pontuação
+            pontuacaoElemento.textContent = pontuacao;
+        }
+
+        // Configurar um temporizador para atualizar a pontuação a cada segundo
+        const intervaloPontuacao = setInterval(atualizarPontuacao, 1000);
+
+
+
+
 document.addEventListener('keydown', jump) /*quando pressionar a tecla*/
